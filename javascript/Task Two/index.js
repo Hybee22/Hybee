@@ -2,20 +2,20 @@
 const data = [
   {
     principal: 2500,
-    time: 1.8
+    time: 1.8,
   },
   {
     principal: 1000,
-    time: 5
+    time: 5,
   },
   {
     principal: 3000,
-    time: 1
+    time: 1,
   },
   {
     principal: 2000,
-    time: 3
-  }
+    time: 3,
+  },
 ];
 
 const interestData = [];
@@ -27,9 +27,10 @@ const simpleInterest = (principal, rate, time) => {
 };
 
 // Interest calculator function
-const interestCalculator = dataObj => {
+const interestCalculator = (dataObj) => {
+  // Check if the data type is an array/object
   if (typeof dataObj === "object") {
-    dataObj.forEach(data => {
+    dataObj.forEach((data) => {
       const { principal, time } = data;
       if (principal >= 2500 && time > 1 && time < 3) {
         rate = 3;
@@ -48,10 +49,13 @@ const interestCalculator = dataObj => {
         data.rate = rate;
         data.simpleInterest = simpleInterest(principal, rate, time);
       }
-
       interestData.push(data);
-      console.log(interestData);
+      return data;
     });
+    //   Pushing the data into 'interestData' array
+    console.log(interestData);
+    //   Returning an Array of the Simple Interest Object
+    return interestData;
   }
 };
 

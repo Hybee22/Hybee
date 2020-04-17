@@ -1,9 +1,12 @@
+// Start value
 const startNum = 1
 
+// Array of strings to replace divisible numbers
 const replaceValues = ['yu', 'gi', 'ho'];
 
 let output = []
 
+// Boolean checks for values divisible by one or two digits
 let db1 = false, db2 = false;
 
 // Check numbers that are divisible by a single digit

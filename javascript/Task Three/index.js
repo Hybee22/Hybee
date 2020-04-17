@@ -6,6 +6,7 @@ let output = []
 
 let db1 = false, db2 = false;
 
+// Check numbers that are divisible by a single digit
 const checkDivisibilityByOne = (num, a, b, c) => {
     if (num % a == 0 && !(( num % b === 0 || num % c === 0 ))) {
         db1 = true
@@ -15,6 +16,7 @@ const checkDivisibilityByOne = (num, a, b, c) => {
     return db1
 }
 
+// Check numbers divisible by two digits
 const checkDivisibilityByTwo = (num, a, b, c) => {
     if (num % (a * b) === 0 && !((num % (b * c) === 0 || num % (a * c) === 0))) {
         db2 = true
@@ -24,6 +26,7 @@ const checkDivisibilityByTwo = (num, a, b, c) => {
     return db2
 }
 
+// Replace values with a single divisor
 const replaceSinglesWith = (val) => {
     let a;
     if (val === 2) {
@@ -37,6 +40,7 @@ const replaceSinglesWith = (val) => {
     return a;
 }
 
+//  Replace values with double divisors
 const replaceDoublesWith = (a, b) => {
     let val, val1, val2;
     let arr1 = [], arr2 = [], arr3 = []
@@ -64,6 +68,7 @@ const replaceDoublesWith = (a, b) => {
     
 }
 
+// Replace numbers with 3 divisors
 const replaceTripleWith = (a, b, c) => {
     let val, val1, val2, val3;
     let arr = [];
@@ -79,14 +84,19 @@ const replaceTripleWith = (a, b, c) => {
     return val
 }
 
-
+// The replaceNumber function
 const replaceNumber = num => { 
+    // Array to hold the numbers to be replaced
     let arr = [];
+    // Temporary storage of the output
     let tempOutput = []
     for (let i = startNum; i <= num; i++) {
+        // Push numbers into array
         arr.push(i)
     }
+    // Loop thru array
     arr.forEach((i) => {
+        
         if (i % 2 === 0 && checkDivisibilityByOne(i, 2, 3, 5)) {        
             i = replaceSinglesWith(2)
         } else if (i % 3 === 0 && checkDivisibilityByOne(i, 3, 5, 2)) {
@@ -111,7 +121,8 @@ const replaceNumber = num => {
 
 }
 
-
+// Replace numbers 1 - 100
 replaceNumber(100)
 
+// Replace numbers 1 - 30
 replaceNumber(30) 

@@ -2,7 +2,7 @@
 const startNum = 1
 
 // Array of strings to replace divisible numbers
-const replaceValues = ['yu', 'gi', 'ho'];
+const replaceValues = ['yu', 'gi', 'oh'];
 
 let output = []
 

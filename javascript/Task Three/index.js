@@ -97,7 +97,7 @@ const replaceNumber = num => {
         // Push numbers into array
         arr.push(i)
     }
-    // Loop thru array
+    // Loop thru array of numbers generated
     arr.forEach((i) => {
         
         if (i % 2 === 0 && checkDivisibilityByOne(i, 2, 3, 5)) {        
@@ -118,6 +118,7 @@ const replaceNumber = num => {
         tempOutput.push(i)
     })
 
+    // Creating a copy of the tempOutput array
     output = [...tempOutput]
     console.log(output)
     return output
